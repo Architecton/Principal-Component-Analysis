@@ -23,8 +23,8 @@ function [M1, M2, compression_ratio, cumsum_sv] = compress_image(image_name, num
 	compressed_size = numel(M1) + numel(M2);
 	compression_ratio = compressed_size / original_size;
 	
-	% Compute cummulative sum of the singular values.
+	% Compute cummulative normalized sum of the singular values.
 	diag_elements = diag(E);
-	cumsum_sv = cumsum(diag_elements)';
+	cumsum_sv = (cumsum(diag_elements)/sum(diag_elements))';
 	
 end
