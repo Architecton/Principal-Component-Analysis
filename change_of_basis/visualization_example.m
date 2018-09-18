@@ -43,5 +43,13 @@ plot(test_point(1), test_point(2), 'o', 'LineWidth', 1, 'Color', 'red')
 % form the linear combinarion to yield this point.
 transformed_test_point = V' * test_point;
 
+% ALSO:
+% ////////////
+% transformed_test_point = test_point' * V;
+% ////////////
+%
+% Compute the dot product of test_point with each right singular vector.
+%
+
 % Plot the transformed point.
 plot(transformed_test_point(1), transformed_test_point(2), 'o', 'LineWidth', 1, 'Color', 'green')
